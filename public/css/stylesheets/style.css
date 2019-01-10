@@ -1,297 +1,88 @@
-/* line 1, ../sass/style.scss */
+/* line 3, ../sass/style.scss */
 body {
   margin: 0;
   padding: 0;
   font-family: BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Open Sans,Helvetica Neue,Roboto Rouble,sans-serif;
 }
 
-/* line 6, ../sass/style.scss */
-ul {
-  margin: 0;
-  padding: 0;
-}
-
-/* line 10, ../sass/style.scss */
-li {
-  list-style: none;
-}
-
-/* line 13, ../sass/style.scss */
-.main-box {
-  /* position:fixed; */
+/* line 8, ../sass/style.scss */
+.main_box {
   padding: 0;
   margin: 0;
   top: 0;
   left: 0;
+  display: flex;
+  flex-direction: column;
   width: 100%;
   height: 100%;
-  background: rgba(255, 255, 255, 0.5);
 }
 
-/* line 23, ../sass/style.scss */
-.calc-header {
+/* line 18, ../sass/style.scss */
+.header {
   width: 100%;
   height: 5em;
   background-color: #fafafa;
   border-bottom: 7px solid rgba(131, 210, 157, 0.43);
-  /* border: 1px solid green; */
 }
 
-/* line 30, ../sass/style.scss */
-.calc-body {
-  display: flex;
-  flex-direction: column;
-  /* justify-content: center; */
-  align-items: center;
-  width: 100%;
-  /* height: 85%; */
-  /* border: 1px solid orange; */
-}
-
-/* line 39, ../sass/style.scss */
-.calc-footer {
-  width: 100%;
-  height: 2rem;
-  text-align: center;
-  border-top: 7px solid rgba(131, 210, 157, 0.43);
-  background-color: #fafafa;
-  /* border: 1px solid orange; */
-}
-
-/* line 47, ../sass/style.scss */
-.calc-footer p {
-  color: #cf3c3c;
-  margin-top: 10px;
-}
-
-/* line 51, ../sass/style.scss */
-.calc-body__h1 {
+/* line 25, ../sass/style.scss */
+.body {
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 60%;
-  height: 50px;
-  text-align: center;
-  /* border: 1px solid blue; */
 }
 
-/* line 60, ../sass/style.scss */
-.calc-body__block {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 80%;
-  height: 100%;
-  /* border: 2px solid purple; */
-  -webkit-box-shadow: 0px 0px 24px 0px rgba(50, 50, 50, 0.42);
-  -moz-box-shadow: 0px 0px 24px 0px rgba(50, 50, 50, 0.42);
-  box-shadow: 0px 0px 24px 0px rgba(50, 50, 50, 0.42);
-}
-
-/* line 71, ../sass/style.scss */
-.calc-body__block__block-body {
-  width: 50%;
-  height: 100%;
-  /* border: 1px solid magenta; */
-}
-
-/* line 76, ../sass/style.scss */
-.calc-body__block__calc {
-  flex-grow: 2;
-  display: flex;
-  justify-content: space-between;
-  margin: 2em 1em 2em 1em;
-  width: 90%;
-  height: 25%;
-  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.03), 8px 14px 38px rgba(39, 44, 49, 0.06), 1px 3px 8px rgba(39, 44, 49, 0.03);
-  transition: box-shadow .3s ease-out;
-  cursor: pointer;
-}
-
-/* line 87, ../sass/style.scss */
-.calc-body__block__calc:hover {
-  z-index: 10;
-  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.03), 0 2px 2px rgba(39, 44, 49, 0.06), 0 4px 4px rgba(39, 44, 49, 0.06), 0 8px 8px rgba(39, 44, 49, 0.06), 0 16px 16px rgba(39, 44, 49, 0.06), 0 32px 32px rgba(39, 44, 49, 0.06), 0 64px 64px rgba(39, 44, 49, 0.06);
-}
-
-/* line 91, ../sass/style.scss */
-.calc-body__block__calc__logo {
-  height: 100%;
-  width: 30%;
-  /* border: 1px solid red; */
-}
-/* line 95, ../sass/style.scss */
-.calc-body__block__calc__logo img {
+/* line 31, ../sass/style.scss */
+.footer {
   width: 100%;
+  height: 4vh;
+  text-align: center;
+  background-color: #fafafa;
 }
 
-/* line 101, ../sass/style.scss */
-.calc-body__block__calc__info {
-  height: 100%;
-  width: 30%;
-  /* border: 1px solid red; */
-}
-
-/* line 106, ../sass/style.scss */
-.calc-body__block__calc__cost {
+/* line 38, ../sass/style.scss */
+.login_form {
+  width: 300px;
+  padding: 1%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  border-left: 3px dotted #eee;
-  /* border: 1px solid red; */
+  border: 1px solid #8da3f3;
+  border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  -webkit-border-radius: 10px 10px 10px 10px;
 }
-
-/* line 115, ../sass/style.scss */
-.calc-body__block__calc__cost__price, .calc-body__block__calc__cost__button, .calc-body__block__calc__cost__assistance {
+/* line 48, ../sass/style.scss */
+.login_form hr {
   width: 100%;
-  height: 30%;
-  text-align: center;
 }
-
-/* line 121, ../sass/style.scss */
-.calc-body__block__condition {
-  width: 50%;
-  height: 100%;
-  -webkit-box-shadow: -11px 0px 28px 4px #83d29d;
-  -moz-box-shadow: -11px 0px 28px 4px #83d29d;
-  box-shadow: -11px 0px 28px 4px #83d29d;
+/* line 51, ../sass/style.scss */
+.login_form input {
+  height: 30px;
+  padding: 1%;
+  border: 1px solid #8da3f3;
+  border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  -webkit-border-radius: 4px 4px 4px 4px;
 }
-/* line 129, ../sass/style.scss */
-.calc-body__block__condition h5 {
-  text-transform: uppercase;
+/* line 59, ../sass/style.scss */
+.login_form input:nth-of-type(2) {
+  margin-bottom: 7%;
 }
-
-/* line 133, ../sass/style.scss */
-.calc-body__block__condition__adding {
-  margin-bottom: 4%;
+/* line 62, ../sass/style.scss */
+.login_form input[type=button] {
+  width: 150px;
+  background-color: #8da3f3;
+  color: #fff;
+  font-size: 1rem;
 }
-
-/* .calc-body__block__condition, .calc-body__block__condition div{
-    flex-grow: 2;
-    margin-left: 1em;
-    width: 10em;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    border: 1px solid gray;
-} */
-/* line 146, ../sass/style.scss */
-.calc-body__block__condition-block {
-  padding-left: 2%;
-  width: 100%;
-  height: 14%;
+/* line 68, ../sass/style.scss */
+.login_form input[type=button]:hover {
+  background-color: #476ae9;
 }
-
-/* line 153, ../sass/style.scss */
-.calc-body__block__condition__insure-cost {
-  position: relative;
-}
-
-/* Slider Range */
-/* line 158, ../sass/style.scss */
-output {
-  position: absolute;
-  width: 55px;
-  height: 22px;
-  text-align: center;
-  background-color: white;
-  color: #000000;
-  border-radius: 4px;
-  border: 1px solid rgba(0, 0, 0, 0.11);
-  bottom: 120%;
-}
-
-/* line 169, ../sass/style.scss */
-output:after {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 0;
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-  border-top: 10px solid #e8e1e1;
-  top: 100%;
-  left: 50%;
-  margin-left: -4px;
-}
-
-/* line 181, ../sass/style.scss */
-.slidecontainer {
-  position: absolute;
-  bottom: 15%;
-  left: 8%;
-  width: 85%;
-}
-
-/* The slider itself */
-/* line 188, ../sass/style.scss */
-.slider {
-  position: relative;
-  -webkit-appearance: none;
-  /* Override default CSS styles */
-  appearance: none;
-  width: 100%;
-  /* Full-width */
-  height: 3px;
-  /* Specified height */
-  border-radius: 5px;
-  background: #fc6607;
-  /* Grey background */
-  outline: none;
-  /* Remove outline */
-  opacity: 0.7;
-  /* Set transparency (for mouse-over effects on hover) */
-  -webkit-transition: .2s;
-  /* 0.2 seconds transition on hover */
-  transition: opacity .2s;
-}
-
-/* Mouse-over effects */
-/* line 204, ../sass/style.scss */
-.slider:hover {
-  opacity: 1;
-  /* Fully shown on mouse-over */
-}
-
-/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
-/* line 209, ../sass/style.scss */
-.slider::-webkit-slider-thumb {
-  position: relative;
-  -webkit-appearance: none;
-  /* Override default look */
-  appearance: none;
-  width: 25px;
-  /* Set a specific slider handle width */
-  height: 25px;
-  /* Slider handle height */
-  border-radius: 50%;
-  -webkit-box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.45);
-  -moz-box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.45);
-  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.45);
-  background: white;
-  cursor: pointer;
-  /* Cursor on hover */
-}
-
-/* line 223, ../sass/style.scss */
-.slider::-moz-range-thumb {
-  position: relative;
-  width: 25px;
-  /* Set a specific slider handle width */
-  height: 25px;
-  /* Slider handle height */
-  border-radius: 50%;
-  -webkit-box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.45);
-  -moz-box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.45);
-  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.45);
-  background: white;
-  /* Green background */
-  cursor: pointer;
-  /* Cursor on hover */
-}
-
-/* End: Slider Range */
-/* line 236, ../sass/style.scss */
-.input {
-  width: 80%;
+/* line 72, ../sass/style.scss */
+.login_form label, .login_form h3 {
+  margin-top: 4%;
+  margin-bottom: 2%;
+  margin-left: 1%;
 }

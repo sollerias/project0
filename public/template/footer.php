@@ -5,7 +5,6 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 //============Конец блока для вывода всех ошибок интерпретатора=========//
 $cssFile =  'css/stylesheets/style.css';
-var_dump($_POST);
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -18,18 +17,8 @@ var_dump($_POST);
 </head>
 <body>
     <div class="main_box">
-        <div class="body">
-                <form action="" method="post" class="login_form">
-                    <h3>Вход</h3>
-                    <hr>
-                    <label for="login">Логин</label>
-                    <input type="text" name="login" value="fedorov">
-                    <label for="password">Пароль</label>
-                    <input type="password" name="password" value="ivan">
-                    <input type="button" name="login_button" value="Войти">
-                </form>
-        </div>
-        <!-- <div class="footer"></div> -->
+        <div class="body"></div>
+        <div class="footer"></div>
     </div>
 </body>
 </html>
