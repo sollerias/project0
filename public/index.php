@@ -41,6 +41,7 @@ $cssFile =  'css/stylesheets/style.css';
                     <!-- <input type="submit" name="login_button" value="Войти"> -->
                     <input type="button" name="login_button" class="login_button" value="Войти">
                 </form>
+                <p class="test"></p>
         </div>
         <!-- <div class="footer"></div> -->
     </div>
@@ -62,13 +63,13 @@ $cssFile =  'css/stylesheets/style.css';
         console.log(jsonData);
         $.ajax({
             type: "POST",
-            contentType: "application/json; charset=utf-8",
+            // contentType: "application/json; charset=utf-8",
             // dataType: "json",
             url: "../engine/ClassUsers.php",
             data: {loginData : jsonData},
             success: function (response) {
                 console.log('Данные переданы.');
-                // $(".test").append(response);
+                $(".test").append(response);
             },
             error: function(){
                 console.log("Данные не переданы.");

@@ -9,15 +9,21 @@ var_dump($_POST);
 class Users
 {
     public function __construct(){
-
     }
-    public function Login()
+    public function Login($formData)
     {
+        // var_dump();
+        $arrJsonDecode = json_decode($formData, true);
+        var_dump($arrJsonDecode);
+        $loginButton =  $arrJsonDecode['login_button'];
+        $userLogin =  mb_strtolower($arrJsonDecode['login']);
+        $userPass =  $arrJsonDecode['password'];
+
+
+        var_dump($loginButton);
+
         require_once(__DIR__ . '/login_data.php');
-        var_dump($_POST);
-        if (isset($_POST['login_button'])) {
-            $userLogin = mb_strtolower($_POST['login']);
-            $userPass = $_POST['password'];
+        if (isset($loginButton)) {
             $error = [];
         
              # проверям логин
@@ -46,6 +52,6 @@ class Users
         }
     }
 }
-// $users = new Users;
-// $users->Login();
+$users = new Users;
+$users->Login($_POST['loginData']);
 ?>
