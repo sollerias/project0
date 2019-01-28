@@ -1,4 +1,6 @@
 <?php
+$userLogin1 = 'sollerij';
+$userLogin2 = 'bazzlighter';
 $users = 
     [ 
        0 => 
@@ -15,6 +17,6 @@ $users =
             'userFirstName' => 'Ivan',
             'userLastName' => 'Petrov'
         ]  
-    ]
-;
+    ];
+
 ?>

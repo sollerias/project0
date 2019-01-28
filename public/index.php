@@ -73,7 +73,6 @@ $cssFile =  'css/stylesheets/style.css';
             },
             error: function(){
                 console.log("Данные не переданы.");
-                
             }
         });
 
