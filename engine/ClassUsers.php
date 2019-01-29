@@ -8,33 +8,35 @@ error_reporting(E_ALL);
 
 class Users
 {
+    private $userLogin;
+    private $userPass;
+    private $userLoginData = [];
+
     public function __construct(){
     }
     public function Login($formData)
     {
+        require_once(__DIR__ . '/login_data.php');
+
         $arrJsonDecode = json_decode($formData, true);
         var_dump($arrJsonDecode);
         $loginButton =  $arrJsonDecode['login_button'];
-        $userLogin =  mb_strtolower($arrJsonDecode['login']);
-        $userPass =  $arrJsonDecode['password'];
+        $this->userLogin =  mb_strtolower($arrJsonDecode['login']);
+        $this->userPass =  $arrJsonDecode['password'];
 
-
-        var_dump($loginButton);
-
-        require_once(__DIR__ . '/login_data.php');
         if (isset($loginButton)) {
             $error = [];
              # проверям логин
-            if(!preg_match("/^[a-zA-Z0-9]+$/", $userLogin))
+            if(!preg_match("/^[a-zA-Z0-9]+$/", $this->userLogin))
              {
                  $error[] = "Логин может состоять только из букв английского алфавита и цифр";
              }
-            if(strlen($userLogin) < 6 or strlen($userLogin) > 20)
+            if(strlen($this->userLogin) < 6 or strlen($this->userLogin) > 20)
             {
                 $error[] = "Логин должен быть не меньше 3-х символов и не больше 20";
             }
             foreach ($users as $value) {
-                if ($userLogin == $value['login']) {
+                if ($this->userLogin == $value['login']) {
                     $error[] = "Такой пользователь уже существует.<br>Введите другое имя.";
                 }
             }
@@ -44,12 +46,20 @@ class Users
                 }
                 unset($error);
             } else{
-                // $userLoginData = ;
-                file_put_contents();
+                
+                $this->userLoginData['login'] = $this->userLogin;
+                $this->userLoginData['password'] = $this->makeHash($this->userPass);
+                $this->userLoginData = json_encode($this->userLoginData, JSON_UNESCAPED_UNICODE);
+                $filePath = __DIR__ . '/user_data.php';
+                file_put_contents($filePath, $this->userLoginData, FILE_APPEND);
             }
-            
-        
         }
+    }
+
+    private function makeHash($data)
+    {
+        $dataHash = hash('sha512', $data);
+        return $dataHash;
     }
 }
 $users = new Users;
