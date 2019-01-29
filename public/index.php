@@ -22,15 +22,7 @@ $cssFile =  'css/stylesheets/style.css';
 <body>
     <div class="main_box">
         <div class="body">
-                <!-- <form action="../engine/login.php" method="post" class="login_form"> -->
-                <p>
-                <?php if (!empty($error)) 
-                {
-                    foreach ($error as $err) {
-                        echo $err;
-                    };}
-                ?>
-                </p>
+                <div class="errorText"></div>
                 <form action="../engine/ClassUsers.php" method="post" class="login_form">
                     <h3>Вход</h3>
                     <hr>
@@ -38,15 +30,14 @@ $cssFile =  'css/stylesheets/style.css';
                     <input type="text" name="login" value="sollerij">
                     <label for="password">Пароль</label>
                     <input type="password" name="password" value="012345">
-                    <!-- <input type="submit" name="login_button" value="Войти"> -->
                     <input type="button" name="login_button" class="login_button" value="Войти">
                 </form>
-                <p class="test"></p>
         </div>
         <!-- <div class="footer"></div> -->
     </div>
     <script>
     var dataObject = {};
+    var i = 0;
     $(".login_button").on("click", function() {
         var formData = $(".login_form").find("input");
         console.log(formData);
@@ -63,20 +54,37 @@ $cssFile =  'css/stylesheets/style.css';
         console.log(jsonData);
         $.ajax({
             type: "POST",
-            // contentType: "application/json; charset=utf-8",
-            // dataType: "json",
             url: "../engine/ClassUsers.php",
             data: {loginData : jsonData},
             success: function (response) {
                 console.log('Данные переданы.');
-                $(".test").append(response);
+                $(".errorText").append(response);
+                i++;
+                console.log(i);
+                 
             },
-            error: function(){
+            error: function(error){
                 console.log("Данные не переданы.");
+                console.log(error);
             }
         });
-
+        // Затираю последующий вывод ошибки
+        if (i > 1){
+            $(".errorText").html('');
+        }
+        // var elem1 = document.getElementsByClassName("errorText");
+        // console.log(elem1);
+        
+        // elem1.style.cssText="color: red !important; \
+        // background-color: yellow; \
+        // width: 100px; \
+        // text-align: center; \
+        // blabla: 5; \
+        // ";
+        // console.log(div.style.cssText);
     });
+    
+    
     </script>
 </body>
 </html>

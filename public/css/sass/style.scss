@@ -25,6 +25,7 @@ body{
 .body{
     height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -38,6 +39,7 @@ body{
 .login_form{
     width: $login_width;
     padding: 1%;
+    position: relative;
     display: flex;
     flex-direction: column;
     border: 1px solid rgb(141, 163, 243);
@@ -69,16 +71,6 @@ body{
             background-color:  rgb(71, 106, 233);
         }
     }
-    // input[type=submit]{
-    //     width: $login_width / 2;
-    //     background-color:  rgb(141, 163, 243);
-    //     color: #fff;
-    //     font-size: 1rem;
-
-    //     &:hover{
-    //         background-color:  rgb(71, 106, 233);
-    //     }
-    // }
     label, h3{
         margin-top: 4%;
         margin-bottom: 2%;
@@ -86,3 +78,14 @@ body{
     }
     
 }
+// .errorText:not(:empty){
+//     position: absolute;
+//     width: 24%;
+//     bottom: 69%;
+//     padding: 0.5%;
+//     border: 1px solid rgba(255, 8, 8, 0.49);
+//     background: rgba(255, 8, 8, 0.49);
+//     border-radius: 10px 10px 10px 10px;
+//     -moz-border-radius: 10px 10px 10px 10px;
+//     -webkit-border-radius: 10px 10px 10px 10px;
+// }

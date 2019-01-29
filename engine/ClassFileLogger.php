@@ -7,11 +7,9 @@
 
 class FileLogger
 {
-    // public $file; // открытый файл
-    private $file; // открытый файл
     public $name; // имя журнала
     public $lines = []; //накапливаемые строки
-    // public $t;
+    private $file; // открытый файл
     /**
      * __construct - Создает новый файл журнала или открывает дозапись в конец 
      * существующего. Параметр $name - логическое имя журнала.
@@ -48,9 +46,7 @@ class FileLogger
 		// }
         // Каждая строка предваряется текущей датой и именем журнала
         $prefix = "[" . date("Y-m-d_H:i:s ") . "{$this->name}]";
-        // $str =  $prefix . " Запись №" . time() . " " .  $str;
         $str =  $prefix . " Запись №" . microtime(true) . " " .  $str;
-
 		$str = str_replace( array("\r", "\n"), '', trim($str) );
         // Сохраняем строку
         $this->lines[] = $str . "\n";

@@ -19,11 +19,10 @@ class Users
         require_once(__DIR__ . '/login_data.php');
 
         $arrJsonDecode = json_decode($formData, true);
-        var_dump($arrJsonDecode);
+        // var_dump($arrJsonDecode);
         $loginButton =  $arrJsonDecode['login_button'];
         $this->userLogin =  mb_strtolower($arrJsonDecode['login']);
         $this->userPass =  $arrJsonDecode['password'];
-
         if (isset($loginButton)) {
             $error = [];
              # проверям логин
@@ -33,7 +32,7 @@ class Users
              }
             if(strlen($this->userLogin) < 6 or strlen($this->userLogin) > 20)
             {
-                $error[] = "Логин должен быть не меньше 3-х символов и не больше 20";
+                $error[] = "Логин должен быть не меньше 6-ти символов и не больше 20";
             }
             foreach ($users as $value) {
                 if ($this->userLogin == $value['login']) {
@@ -46,7 +45,6 @@ class Users
                 }
                 unset($error);
             } else{
-                
                 $this->userLoginData['login'] = $this->userLogin;
                 $this->userLoginData['password'] = $this->makeHash($this->userPass);
                 $this->userLoginData = json_encode($this->userLoginData, JSON_UNESCAPED_UNICODE);
