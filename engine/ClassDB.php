@@ -33,12 +33,19 @@ class DB
     }
     public function sql($query)
     {
-        $sql = pg_query($this->dbconn, $query);
-        var_dump($sql);
-        return $sql;
+        $this->sql = pg_query($this->dbconn, $query);
+        if (!$this->sql) {
+            $result = pg_get_result($this->dbconn);
+            echo pg_result_error($result);
+        }
+        var_dump($this->sql);
+        return $this->sql;
     }
-    public function getRow($query){
-		return pg_fetch_array($query, null, PGSQL_ASSOC);
+    public function getRow($sql = ''){
+        if ($sql == '') {
+            $sql = $this->sql;
+        }
+		return pg_fetch_array($sql, null, PGSQL_ASSOC);
 	}
 }
 // $db = new DB;
