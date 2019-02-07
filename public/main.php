@@ -23,6 +23,7 @@ $cssFile =  'css/stylesheets/style.css';
     <div class="main_box">
         <div class="body">
                <h1>Главная страница</h1>
+               <a href="http://localhost:8888/project0/public/index.php">Вернуться на страницу Логина</a>
         </div>
         <!-- <div class="footer"></div> -->
     </div>

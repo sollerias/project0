@@ -19,7 +19,6 @@ class Users
         require_once(__DIR__ . '/login_data.php');
         $db = new DB;
         $arrJsonDecode = json_decode($formData, true);
-        // var_dump($arrJsonDecode);
         $loginButton =  $arrJsonDecode['login_button'];
         $this->userLogin =  pg_escape_string(trim(mb_strtolower($arrJsonDecode['login'])));
         $this->userPass =  pg_escape_string(trim($arrJsonDecode['password']));
@@ -46,10 +45,8 @@ class Users
 
                 if ($row['user_login'] == $this->userLogin && 
                     $row['user_password'] ==  $this->makeHash($this->userPass)) {
-                    $pathToMain = realpath("../public/main.php");
+                    $pathToMain = "http://localhost:8888/project0/public/main.php";
                     header("Location: {$pathToMain}");
-                    // var_export($this->userLogin);
-                    // $error[] = "Данные совпадают, проходите, пожалуйста.";
                 }
             }
             if (!empty($error)) {
