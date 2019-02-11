@@ -19,13 +19,21 @@ $cssFile =  'css/stylesheets/style.css';
     <link rel="stylesheet" href="<?=$cssFile?>">
     <title>Login</title>
 </head>
-<body>
-    <div class="main_box">
+<body onload="replaceUrl();  alertPage()">
+    <div class="main_box" onload= "replaceUrl()">
         <div class="body">
                <h1>Главная страница</h1>
                <a href="http://localhost:8888/project0/public/index.php">Вернуться на страницу Логина</a>
         </div>
-        <!-- <div class="footer"></div> -->
     </div>
 </body>
+<script>
+function replaceUrl(){
+    window.location.href = "http://localhost:8888/project0/public/main.php";
+    // window.location = "http://localhost:8888/project0/public/main.php";
+}
+function alertPage(){
+    alert( 'Привет всем присутствующим!' );
+}
+</script>
 </html>
